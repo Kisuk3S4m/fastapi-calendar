@@ -1,2 +1,3 @@
-# fastapi-calendar
-A calendar app developed with FastAPI
+# FastAPI Calendar
+
+A calendar app developed with FastAPI for learning purposes.
