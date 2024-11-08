@@ -44,3 +44,17 @@ A calendar app developed with FastAPI for learning purposes.
 
 7. **Access the application:**
     Open your browser and go to `http://127.0.0.1:8000`.
+
+## Deployment
+
+1. **Build the Docker image:**
+    ```bash
+    docker build -t fastapi-calendar .
+    ```
+
+2. **Set environment variables:** follow the step 4 in [Setup and Installation](#setup-and-installation) section.
+
+3. **Run the Docker container:**
+    ```bash
+    docker run -d --name fastapi-calendar -p 8000:8000 --env-file .env fastapi-calendar
+    ```
