@@ -1,8 +1,9 @@
-from fastapi import FastAPI
-import uvicorn
+from os import getenv
 
 from dotenv import load_dotenv
-import os
+
+from fastapi import FastAPI
+from uvicorn import run as server_run
 
 # Load environment variables from `.env` file
 load_dotenv()
@@ -19,6 +20,6 @@ def read_root():
 
 # Run the app with Uvicorn
 if __name__ == "__main__":
-    host = os.getenv("APP_HOST", "127.0.0.1")
-    reload = os.getenv("APP_RELOAD", "1") == "1"
-    uvicorn.run("main:app", host=host, port=8080, reload=reload)
+    host = getenv("APP_HOST", "127.0.0.1")
+    reload = getenv("APP_RELOAD", "1") == "1"
+    server_run("main:app", host=host, port=8080, reload=reload)
